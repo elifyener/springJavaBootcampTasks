@@ -18,13 +18,13 @@ public class EmployeeController {
 		String url = "http://localhost:8080/api/employee/" + employeeId ; 
 		RestTemplate restTemplate = new RestTemplate();
 		Employee employee = restTemplate.getForObject(url, Employee.class);
-		System.out.println("Müşteri: " + employee.getEmployeeName());
+		System.out.println("Personel: " + employee.getEmployeeName());
 		return "Edinme Basarili " + employee.getEmployeeName() + " " + employee.getMonthlySalary();
 	}
 	
 	@GetMapping("/employee/post")
 	@ResponseBody
-	public String postProduct() {
+	public String postEmployee() {
 		Employee employee = new Employee(0, "Montgomery Burns", 25000);
 		String url = "http://localhost:8080/api/employee"; 
 		RestTemplate restTemplate = new RestTemplate();
